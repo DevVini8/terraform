@@ -1,0 +1,38 @@
+# ==============================================================================
+# .gitignore - Proteção de Estados do Terraform (.tfstate) e Credenciais Sensíveis
+# ==============================================================================
+
+# Diretórios locais do Terraform
+**/.terraform/*
+.terraform.lock.hcl
+
+# Arquivos de estado do Terraform (contêm senhas e URIs sensíveis)
+*.tfstate
+*.tfstate.*
+
+# Logs de erro
+crash.log
+crash.*.log
+
+# Arquivos de variáveis com segredos reais (NUNCA versionar)
+*.tfvars
+*.tfvars.json
+*.tfvars.*
+
+# Arquivos de override e configuração CLI
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Sistema operacional e IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

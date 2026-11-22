@@ -1,0 +1,57 @@
+name: CI/CD - Terraform IaC & Pipeline ETL (Aiven PostgreSQL)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "etl/**"
+      - "terraform/**"
+
+jobs:
+  validate-iac-and-etl:
+    name: Validar IaC (Terraform) e Pipeline ETL
+    runs-on: ubuntu-latest
+
+    env:
+      # Segredos injetados via GitHub Secrets (Fase 2 - Gestão de Segurança)
+      TF_VAR_aiven_api_token: ${{ secrets.AIVEN_API_TOKEN }}
+      TF_VAR_aiven_project_name: ${{ secrets.AIVEN_PROJECT_NAME }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.5"
+
+      - name: Terraform Format & Init (Backend Local/Cloud)
+        working-directory: ./terraform
+        run: |
+          terraform fmt -check
+          terraform init -backend=false
+          terraform validate
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Instalar Dependências Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Executar Testes de Regras de Negócio e Conformidade LGPD
+        run: |
+          python -m unittest discover -s tests -p "test_*.py"

@@ -1,112 +1,364 @@
-# ⚙️ Entregável 2: Processo de Tratamento dos Dados (Pipeline ETL)
+# 📊 Observatório Interseccional da Violência no Brasil (ODS 5 & ODS 18)
 
-**Projeto:** Observatório Interseccional da Violência contra a Mulher nas Capitais do Brasil (2025)  
-**Alinhamento Agenda 2030:** **ODS 5** (Igualdade de Gênero) e **ODS 18** (Igualdade Étnico-Racial)  
-**Módulos de Código no Repositório:** `/etl/config.py`, `/etl/extract.py`, `/etl/transform.py`, `/etl/load.py`, `/etl/schema.sql`, `/etl/pipeline.py`
+> **Projeto Integrador de Big Data & Analytics** — Pipeline Completo de Engenharia de Dados, Governança LGPD, Infraestrutura como Código (Terraform + Aiven PostgreSQL) e Business Intelligence Interativo (Streamlit).
 
 ---
 
-## 1. Visão Geral da Arquitetura do Processo de Tratamento
+## 📌 Sumário
 
-O processo de transformação das duas bases de dados brutas (`fonte original.xlsx` — SINESP/MJSP e `complemento fogo cruzado.xlsx` — Instituto Fogo Cruzado) na base final tratada e dimensionalizada foi projetado sob o paradigma de **Pipeline ETL Modular (Extract, Transform, Load)** em **Python**.
-
-A arquitetura do código no diretório `/etl` separa responsabilidades em cinco módulos independentes e auditáveis:
-
-1. **`etl/config.py` (Configuração, Segurança e Metadados Oficiais):** Centraliza a leitura segura de variáveis de ambiente (`.env`), parâmetros de chunking (`ETL_CHUNK_SIZE=5000`), constantes dos **Critérios de Inclusão e Exclusão da Equipe** (`ANO_REFERENCIA = 2025`, `EVENTOS_INCLUSAO_SINESP`, `GENEROS_INCLUSAO_FC`, `IDADE_MIN_FC = 18`, `IDADE_MAX_FC = 45`) e o dicionário oficial das **27 Capitais do Brasil (`CAPITAIS_POR_UF`)** e Macrorregiões do IBGE (`UF_METADATA`).
-2. **`etl/extract.py` (Ingestão Resiliente):** Realiza a leitura estruturada das planilhas originais em formato OpenXML (`.xlsx`) com suporte a cache otimizado em `.csv` e registro detalhado de logs de execução.
-3. **`etl/transform.py` (Motor de Data Wrangling, Filtros da Equipe, LGPD e Star Schema):** Executa todas as regras de limpeza, conversão tipada, filtragem pelos critérios de inclusão e exclusão da equipe, anonimização em conformidade com a LGPD (Lei nº 13.709/2018) e construção das tabelas dimensionais e tabelas fato.
-4. **`etl/load.py` e `etl/schema.sql` (Persistência Relacional e Controle de Volume < 1 GB):** Valida o consumo de memória antes da carga, aplica o DDL do Esquema Estrela (`schema.sql`) e insere os dados em lotes (`chunksize=5000`, `method='multi'`) no PostgreSQL gerenciado na Aiven Cloud (com SSL obrigatório) e em arquivos CSV tratados na pasta `/data/processed`.
-5. **`etl/pipeline.py` (Orquestrador CLI):** Ponto de entrada único via linha de comando (`python -m etl.pipeline`) que encadeia Extração → Transformação → Carga e contabiliza o tempo total de execução.
+1. [Entendimento do Negócio e Mapeamento de Impacto (ODS 5 e ODS 18)](#-1-entendimento-do-negócio-e-mapeamento-de-impacto-ods-5-e-ods-18)
+2. [Diagrama da Arquitetura da Solução](#-2-diagrama-da-arquitetura-da-solução)
+3. [Análise dos 5 V's do Big Data e Classificação dos Tipos de Dados](#-3-análise-dos-5-vs-do-big-data-e-classificação-dos-tipos-de-dados)
+4. [Conformidade com a LGPD e Governança de Dados](#-4-conformidade-com-a-lgpd-e-governança-de-dados)
+5. [Justificativa do Modelo de Banco de Dados (Star Schema) e Otimização (< 1 GB Aiven)](#-5-justificativa-do-modelo-de-banco-de-dados-star-schema-e-otimização--1-gb-aiven)
+6. [Dicionário de Dados e Regras de Negócio Interseccionais](#-6-dicionário-de-dados-e-regras-de-negócio-interseccionais)
+7. [Estrutura Obrigatória do Repositório](#-7-estrutura-obrigatória-do-repositório)
+8. [Guia de Reprodução Passo a Passo (Deployment Guide)](#-8-guia-de-reprodução-passo-a-passo-deployment-guide)
 
 ---
 
-## 2. Ferramentas e Tecnologias Utilizadas (e Justificativas)
+## 🎯 1. Entendimento do Negócio e Mapeamento de Impacto (ODS 5 e ODS 18)
 
-| Tecnologia / Biblioteca | Papel no Processo de Tratamento | Justificativa Técnica para Utilização |
+### O Problema Interseccional
+A violência letal e armada no Brasil não se distribui de maneira uniforme pela população: ela incide de modo estrutural na interseção entre **Gênero** e **Raça/Cor**. Enquanto as estatísticas oficiais macro-governamentais consolidam o volume nacional de crimes letais (como **Feminicídio** e **Homicídio Doloso**), o monitoramento detalhado da violência armada urbana revela como **mulheres negras**, **mulheres trans e travestis** e a **juventude negra** sofrem taxas desproporcionais de vitimização e letalidade.
+
+Este projeto integra **duas bases de dados públicas complementares**:
+1. **Base Oficial Nacional — SINESP / Ministério da Justiça e Segurança Pública (`fonte original.xlsx`):** Contém **832.293 registros** distribuídos por todas as 27 Unidades Federativas (UFs) e municípios brasileiros ao longo de 2025, totalizando **367.243 vítimas** discriminadas por sexo (`148.197` feminino [40,35%], `212.163` masculino [57,77%] e `6.883` não informado), natureza do evento (`1.562` Feminicídios consumados, `4.161` Tentativas de feminicídio, `63.612` Estupros de vulnerável, `19.877` Estupros, `31.492` Homicídios dolosos, etc.), arma e faixa etária.
+2. **Microdados de Violência Armada — Instituto Fogo Cruzado (`complemento fogo cruzado.xlsx`):** Contém **45.025 registros** detalhados de vítimas baleadas (2016–2026) nas regiões metropolitanas do **Rio de Janeiro (21.548)**, **Pernambuco (15.232)**, **Bahia (6.640)** e **Pará (1.605)** — com **28.071 mortos (62,35% de letalidade)** e **16.954 feridos** — enriquecendo a análise com variáveis interseccionais de **Raça/Cor (`82,65%` de pessoas Negras dentre as 8.990 vítimas com raça identificada: 7.430 negras vs. 1.555 brancas)**, **Identidade de Gênero (`40.554` homens cis, `3.176` mulheres cis, `49` mulheres trans e travestis, `6` homens trans)**, **Idade exata**, **Ação/Operação Policial (`14.569` vítimas, 32,36% do total)** e **Circunstâncias (`Bala perdida`, `Chacina`, etc.)**.
+
+### Critérios de Inclusão e Exclusão Definidos pela Equipe
+
+| Tipo | Regra Metodológica | Impacto e Aplicação no Pipeline (`/etl/transform.py`) |
 | :--- | :--- | :--- |
-| **Python 3.11+** | Linguagem principal de engenharia de dados | Padrão de mercado para pipelines de ciência de dados e ETL, com tipagem clara, portabilidade multiplataforma e integração nativa com bancos relacionais em nuvem. |
-| **Pandas & NumPy** | Manipulação vetorial, limpeza, filtragem e agregação em memória | Operações vetorizadas em C/Cython permitem filtrar as `832.293` linhas do SINESP e `45.025` linhas do Fogo Cruzado em poucos segundos, além de suportar `groupby`, `pivot_table` e joins relacionais (`merge`) para montagem do Star Schema. |
-| **OpenPyXL** | Leitura de planilhas Microsoft Excel (`.xlsx`) | Suporte completo ao padrão OpenXML para leitura direta das abas `2025` (`fonte original.xlsx`) e `vitimas (2)` (`complemento fogo cruzado.xlsx`). |
-| **Hashlib (SHA-256) & Unicodedata** | Pseudonimização criptográfica (LGPD) e normalização textual Unicode | `hashlib.sha256` garante anonimização irreversível com *salt* dos identificadores de vítimas (Art. 12 e 13 da LGPD), enquanto `unicodedata.normalize('NFKD')` elimina falhas de comparação causadas por acentuação nos nomes de capitais (ex: `BELÉM` vs. `BELEM`, `SÃO PAULO` vs. `SAO PAULO`). |
-| **SQLAlchemy & Psycopg2** | Camada de abstração SQL e driver nativo PostgreSQL | Permite conexão segura com `sslmode=require` na plataforma Aiven e escrita otimizada em lotes (`method='multi'`, `chunksize=5000`), evitando sobrecarga de memória e timeouts de rede. |
-| **Python-dotenv** | Gestão segura de segredos e variáveis de ambiente | Isola credenciais sensíveis (`DATABASE_URL`, `DB_PASSWORD`, `LGPD_HASH_SALT`) em arquivo `.env` ignorado pelo Git (`.gitignore`), cumprindo as boas práticas de segurança de DevSecOps. |
+| **✅ Inclusão 1** | **Dados entre janeiro e dezembro de 2025** | Filtragem temporal estrita (`ano == 2025` e `mes` de `1` a `12`) em ambas as bases. |
+| **✅ Inclusão 2** | **Somente Capitais do Brasil** | Filtragem pelas **27 Capitais Estaduais/Distrital** no SINESP (validadas pelo par oficial `UF -> Capital`) e pelas **4 Capitais monitoradas** no Fogo Cruzado (`Salvador`, `Recife`, `Rio de Janeiro` e `Belém`). |
+| **✅ Inclusão 3** | **Eventos ocorridos por Estupro, Feminicídio e Tentativa de feminicídio** | Na fonte original (`fonte original.xlsx`), retém exclusivamente esses 3 crimes de violência baseada em gênero (**ODS 5**). |
+| **✅ Inclusão 4** | **Vítimas do sexo feminino na fonte original** | Mantém apenas a métrica `feminino > 0` na base SINESP, zerando/descartando registros masculinos ou sem sexo informado. |
+| **✅ Inclusão 5** | **Mulheres entre 18 e 45 anos na fonte do Fogo Cruzado** | Filtra estritamente a faixa etária reprodutiva e economicamente ativa de adultas jovens (`18 <= idade <= 45`). |
+| **✅ Inclusão 6** | **Somente gênero de Mulheres cis e Mulheres trans e travesti no Fogo Cruzado** | Retém exclusivamente `genero IN ('Mulher cis', 'Mulher trans e travesti')`. |
+| **🚫 Exclusão 1** | **Dados sem gêneros informados na fonte do Fogo Cruzado** | Exclui `1.240` registros com gênero `Não identificado`/vazio (além dos registros masculinos). |
+| **🚫 Exclusão 2** | **Dados sem município identificado** | Exclui qualquer linha com município nulo, vazio ou `"NÃO INFORMADO"`. *(Nota Técnica: Na planilha bruta do SINESP, os 324 registros estaduais de Estupro possuem o campo `municipio` em branco; por isso, na exclusão estrita restam os **496 registros mensais das 27 Capitais** de Feminicídio [292 vítimas] e Tentativa de feminicídio [941 vítimas], somando **1.233 vítimas femininas**, com opção no Dashboard para visualizar também os registros de Estupro por UF/Capital).* |
+| **🚫 Exclusão 3** | **Dados sem idade informada na fonte do Fogo Cruzado** | Exclui os `96` registros de mulheres nas capitais em 2025 sem idade preenchida (`NaN`/vazio), resultando na coorte final exata de **77 mulheres baleadas (18 a 45 anos)** nas capitais em 2025 (**75 Mulheres cis** e **2 Mulheres trans e travestis**; **47 Mortas [61,0% de letalidade]** e **30 Feridas**; **75,5% Negras** dentre as vítimas com raça identificada; **Idade Média = 29,6 anos** e **Idade Mediana = 29,0 anos**). |
+
+### Alinhamento aos Objetivos de Desenvolvimento Sustentável (ONU / Brasil)
+- **ODS 5 (Igualdade de Gênero — Meta 5.2):** Eliminar todas as formas de violência contra todas as mulheres e meninas nas esferas públicas e privadas, monitorando a razão entre **Feminicídios** e homicídios femininos totais, bem como a vitimização de mulheres cis e trans/travestis em tiroteios.
+- **ODS 18 (Igualdade Étnico-Racial — ODS Voluntário do Brasil):** Eliminar o racismo estrutural e a discriminação étnico-racial, evidenciando a sobrerrepresentação de pessoas negras entre as vítimas fatais e feridas por armas de fogo e em ações policiais.
+
+### Valor Social e Econômico Gerado
+- **Valor Social:** Fornece diagnósticos georreferenciados (em nível de Estado, Município e Bairro) para orientar políticas públicas focalizadas de prevenção ao feminicídio, proteção a mulheres trans/travestis e redução da letalidade armada em territórios periféricos.
+- **Valor Econômico:** Permite otimizar a alocação orçamentária em segurança pública, saúde de urgência (SUS) e assistência social, mitigando o custo socioeconômico dos **Anos Potenciais de Vida Perdidos (APVP)** — cuja mediana de idade das vítimas concentra-se na faixa economicamente ativa (20 a 35 anos).
 
 ---
 
-## 3. Detalhamento Técnico do Processo de Transformação (`etl/transform.py`)
+## 🏗️ 2. Diagrama da Arquitetura da Solução
 
-### 3.1. Padronização Estrutural e Normalização Unicode
-Logo na entrada do pipeline, duas funções utilitárias garantem consistência sintática entre as fontes:
-- **`standardize_column_names(df)`:** Decompõe caracteres acentuados via Unicode `NFKD`, converte todos os nomes de colunas para letras minúsculas e substitui espaços e barras por sublinhados (`snake_case`).
-- **`strip_accents_upper(text)`:** Normaliza nomes de municípios e capitais em caixa alta sem diacríticos, criando o dicionário `CAPITAIS_POR_UF_NORM` para validação exata do par `(UF, Capital)` sem risco de falsos negativos por diferenças de codificação.
+```mermaid
+flowchart LR
+    subgraph Fontes["📂 Fontes de Dados Brutas (.xlsx)"]
+        F1[("SINESP / MJSP\nfonte original.xlsx\n(832.284 linhas)")]
+        F2[("Instituto Fogo Cruzado\ncomplemento fogo cruzado.xlsx\n(45.016 linhas)")]
+    end
 
-### 3.2. Fluxo de Tratamento da Fonte Original — SINESP (`clean_and_optimize_sinesp`)
-O método `clean_and_optimize_sinesp` transforma os `832.293` registros brutos na base consolidada das capitais seguindo seis passos sequenciais:
+    subgraph ETL["⚙️ Pipeline ETL & Governança (/etl)"]
+        E["extract.py\nLeitura Otimizada"]
+        T["transform.py\n• Data Wrangling\n• Anonimização LGPD (SHA-256 + k-Anonimato)\n• Otimização Volume < 1 GB (~91% redução zeros)"]
+        L["load.py\nCarga em Batches\n(chunksize=5000)"]
+        E --> T --> L
+    end
 
-1. **Coerção Numérica e Tratamento de Nulos:** As colunas métricas (`feminino`, `masculino`, `nao_informado`, `total_vitima`, `total`, `total_peso`) são convertidas via `pd.to_numeric(..., errors="coerce").fillna(0.0)`, prevenindo erros de tipo provocados por células vazias na planilha original.
-2. **Conversão Temporal e Critério de Inclusão 1 (Jan–Dez 2025):** A coluna `data_referencia` é convertida para `datetime`, extraindo-se `ano` e `mes` e aplicando o filtro estrito `(df["ano"] == 2025) & (df["mes"].between(1, 12))`.
-3. **Critério de Inclusão 3 (Eventos de Violência de Gênero):** Aplica-se `df[df["evento"].isin(["Estupro", "Feminicídio", "Tentativa de feminicídio"])]`, descartando imediatamente todas as outras 26 categorias criminais ou administrativas fora do escopo da equipe.
-4. **Critério de Exclusão 2 (Sem Município Identificado) + Inclusão 2 (Somente Capitais do Brasil):**
-   - Remove-se qualquer registro cujo município normalizado pertença ao conjunto de valores inválidos (`{"", "NAO INFORMADO", "NÃO INFORMADO", "SEM IDENTIFICACAO"}`).
-   - Valida-se cada linha comparando o município com a capital oficial daquela UF (`df["mun_norm"] == df["uf"].map(CAPITAIS_POR_UF_NORM)`). Essa validação cruzada por `UF + Capital` impede que municípios homônimos do interior (como *Belém/AL*, *Belém/PB* ou *Campo Grande/RN*) sejam incluídos indevidamente como se fossem as capitais *Belém/PA* ou *Campo Grande/MS*.
-5. **Critério de Inclusão 4 (Somente Vítimas do Sexo Feminino):** Filtra-se estritamente `df[df["feminino"] > 0]`, zerando as colunas `masculino = 0` e `nao_informado = 0` e igualando `total_vitima = feminino`. Essa etapa também elimina todas as linhas cartesianas zeradas da planilha original, otimizando o volume para o limite de 1 GB da Aiven.
-6. **Consolidação Mensal por Capital e Evento:** Executa-se `df.groupby(group_cols, as_index=False).agg(...)` somando `feminino`. Essa decisão técnica resolve duplicidades de lançamento dentro do mesmo mês/capital na fonte original (como múltiplas linhas mensais registradas nas regiões administrativas de Brasília/DF), preservando 100% das **1.233 vítimas femininas** nas 27 Capitais.
+    subgraph IaC["☁️ Infraestrutura como Código (/terraform)"]
+        TF["Terraform (main.tf)\nProvider: aiven/aiven"]
+        SEC["Segurança\n.env + GitHub Secrets"]
+        PG[("Aiven PostgreSQL 16\nFree Tier (Limite 1 GB)\nStar Schema (4 Dim + 2 Fatos)")]
+        SEC --> TF --> PG
+    end
 
-### 3.3. Fluxo de Tratamento e LGPD — Instituto Fogo Cruzado (`clean_and_anonymize_fogo_cruzado`)
-O método `clean_and_anonymize_fogo_cruzado` processa os `45.025` registros brutos de vítimas baleadas aplicando governança LGPD e o funil metodológico da equipe:
+    subgraph BI["📊 Camada Analítica & BI (/dashboard)"]
+        BR["business_rules.py\nIndicadores ODS 5 & ODS 18\nMédia vs. Mediana"]
+        ST["app.py (Streamlit + Plotly)\n• 6 KPIs Executivos\n• Filtros Cruzados\n• Drill-Down Multinível"]
+        BR --> ST
+    end
 
-1. **Minimização de Dados Sensíveis e Quase-Identificadores (LGPD Art. 6º, III):**
-   Remove explicitamente 11 colunas que não são utilizadas nas métricas interseccionais ou que oferecem risco de reidentificação física/funcional:
-   ```python
-   cols_to_drop_lgpd = [
-       "endereco", "ocorrencia_numero", "corporacao", "cargo_agente",
-       "status_agente", "unidade", "status_servico", "qualificacoes",
-       "recortes", "motivos_complementares", "data_morte",
-   ]
-   ```
-2. **Pseudonimização Irreversível com SHA-256 (LGPD Arts. 12 e 13):**
-   Substitui os UUIDs originais (`vitima_id` e `ocorrencia_id`) por hashes criptográficos de 16 caracteres gerados com *salt* secreto (`pseudonymize_id_lgpd`), preservando a capacidade de contagem distinta (`COUNT(DISTINCT vitima_hash_lgpd)`) sem permitir rastreamento reverso.
-3. **Saneamento Algorítmico de Coordenadas e *k*-Anonimato Espacial (`normalize_coordinate_lgpd`):**
-   Na planilha bruta, diversas coordenadas apresentavam perda de separador decimal (ex: latitude `-129586607` ou `-8054123` em vez de `-12.96` ou `-8.05`). O algoritmo divide iterativamente o valor por `10.0` até que a latitude entre no intervalo territorial brasileiro (`|lat| <= 35.0`) e a longitude em `|lon| <= 75.0`, arredondando em seguida para **2 casas decimais** (`round(v, 2)`), o que cria células espaciais de ~1,1 km de raio para proteção de privacidade geográfica.
-4. **Aplicação Sequencial dos Critérios de Inclusão e Exclusão da Equipe:**
-   - **Período (Jan–Dez 2025):** `(df["ano"] == 2025) & (df["mes"].between(1, 12))` (reduz de `45.025` para `5.466` registros).
-   - **Município Identificado e Somente Capitais:** Remove cidades vazias/não informadas e filtra `df["cidade_norm"].isin(CAPITAIS_SET_NORM)` (mantendo `Salvador`, `Recife`, `Rio de Janeiro` e `Belém`, reduzindo de `5.466` para `3.026` registros).
-   - **Gênero Informado e Somente Mulheres Cis e Trans/Travestis:** Remove registros com gênero `'Não identificado'` e homens, aplicando `df[df["genero"].isin(["Mulher cis", "Mulher trans e travesti"])]` (reduzindo de `3.026` para `223` registros).
-   - **Idade Informada e Faixa Etária de 18 a 45 Anos:** Converte `idade` para numérico, aplica `df.dropna(subset=["idade"])` (excluindo os `96` registros sem idade informada) e filtra `df[df["idade"].between(18, 45)]` (excluindo `50` registros fora da faixa etária), resultando na coorte final exata de **`77` mulheres**.
-5. **Engenharia de Atributos Interseccionais (ODS 5 × ODS 18):**
-   Cria as colunas derivadas `is_fatal` (`1` para `Morto`, `0` para `Ferido`), `faixa_etaria` segmentada (`Jovem Adulta (18-24)`, `Adulta (25-34)`, `Adulta (35-45)`), `macro_genero` (`Mulher Cis` vs. `Mulher Trans/Travesti`) e `grupo_interseccional` (`genero + " - " + raca`).
-
-### 3.4. Construção do Esquema Estrela (`build_star_schema_tables`) e Carga em Lotes (`load.py`)
-A função `build_star_schema_tables(df_sinesp, df_fc)` normaliza os dois DataFrames tratados em **4 Tabelas de Dimensão** e **2 Tabelas Fato**:
-- `dim_tempo`: Calendário único com chave substituta inteira `id_tempo` no formato `YYYYMMDD`.
-- `dim_localidade`: Cadastro unificado das Capitais do Brasil e bairros com chave `id_localidade`, enriquecido com `estado`, `uf` e `regiao`.
-- `dim_perfil_vitima`: Combinações únicas de `genero`, `macro_genero`, `raca_cor`, `faixa_etaria`, `tipo_pessoa` e `grupo_interseccional` (`id_perfil`).
-- `dim_contexto_crime`: Tipificações criminais, presença/ação policial, chacina, circunstância e local (`id_contexto`).
-- `fato_violencia_sinesp` e `fato_vitimas_fogo_cruzado`: Tabelas fato contendo apenas chaves estrangeiras inteiras e métricas numéricas, carregadas no PostgreSQL Aiven via `df.to_sql(..., chunksize=5000, method="multi")`.
+    F1 --> E
+    F2 --> E
+    L ==>|"SQLAlchemy + SSL"| PG
+    PG ==>|"Views Analíticas"| BR
+```
 
 ---
 
-## 4. Resumo das Principais Decisões Técnicas e Justificativas
+## 📈 3. Análise dos 5 V's do Big Data e Classificação dos Tipos de Dados
 
-| Decisão Técnica Adotada | Problema Técnico Resolvido | Justificativa de Engenharia de Dados |
+### Classificação da Variedade dos Dados
+- **Dados Predominantemente Estruturados:** Ambas as bases são distribuídas em planilhas eletrônicas (`.xlsx` / OpenXML) organizadas em linhas e colunas com tipos primitivos bem definidos (numéricos inteiros/decimais, datas seriais e categorias padronizadas).
+- **Elementos Semi-Estruturados Embutidos:** Na base complementar do Instituto Fogo Cruzado, colunas descritivas como `motivos_complementares`, `circunstancias`, `recortes` e `qualificacoes` contêm taxonomias multivaloradas ou texto semi-livre que são normalizadas durante a etapa de *Data Wrangling*.
+
+### Documentação dos 5 V's Aplicados ao Projeto
+
+| Dimensão (5 V's) | Aplicação Concreta nas Bases do Projeto | Tratamento na Arquitetura |
 | :--- | :--- | :--- |
-| **Validação Geográfica pelo Par `(UF, Capital)` em vez de apenas Nome da Cidade** | No Brasil existem municípios do interior com o mesmo nome de capitais de outros estados (ex: *Belém* em AL e PB; *Campo Grande* em AL e RN; *Palmas* no PR; *Rio Branco* no MT). | Filtrar apenas pelo nome da cidade incluiria municípios do interior por engano. A validação pelo dicionário `CAPITAIS_POR_UF[uf] == municipio` garante 100% de precisão geográfica nas 27 capitais. |
-| **Agrupamento Mensal (`groupby().agg(sum)`) em vez de `drop_duplicates()` Simples no SINESP** | Na planilha original do SINESP, Brasília (DF) possui múltiplas linhas no mesmo mês/evento com valor `feminino = 1` referentes a diferentes regiões administrativas. | Um `drop_duplicates()` simples descartaria ocorrências reais idênticas. O `groupby` com soma consolida corretamente o total mensal de cada capital sem perder nenhuma vítima (`1.233` vítimas preservadas). |
-| **Descarte de Linhas Zeradas e Pré-Filtragem no ETL antes da Carga no Banco** | A planilha bruta `fonte original.xlsx` possui `728.846` linhas zeradas (~310 MB em XML), o que consumiria espaço e I/O desnecessários no banco em nuvem. | Ao aplicar os critérios da equipe e descartar linhas zeradas na camada de transformação em memória, o volume enviado ao PostgreSQL da Aiven cai para menos de **5 MB** (< 0,5% do limite gratuito de 1 GB). |
-| **Algoritmo Iterativo de Correção de Escala de Coordenadas GPS** | As coordenadas no arquivo bruto do Fogo Cruzado misturam valores decimais (`-12.95`) com inteiros fora de escala (`-129586607` e `-8054123`). | A divisão iterativa por 10 com limite territorial específico para latitude (`<= 35°`) e longitude (`<= 75°`) recupera automaticamente a posição geográfica correta antes de aplicar o truncamento de 2 casas da LGPD. |
-| **Persistência Dual (PostgreSQL Aiven + Cache CSV em `/data/processed`)** | Instâncias gratuitas de banco em nuvem podem entrar em hibernação após inatividade, o que poderia causar falha de conexão no Dashboard publicado. | A persistência dual garante que o pipeline carregue o Esquema Estrela no PostgreSQL da Aiven e, simultaneamente, mantenha os CSVs tratados sincronizados no repositório para leitura instantânea (< 0,2s) e alta disponibilidade. |
+| **1. Volume** | **877.318 registros brutos** somados (**832.293** na `fonte original.xlsx` + **45.025** na `complemento fogo cruzado.xlsx`), totalizando **33,7 MB** compactados em `.xlsx` e **> 360 MB** em XML descompactado (`sheet1.xml`). | Filtragem das **728.846 linhas cartesianas zeradas** do SINESP (mantendo as **103.447 linhas ativas** e preservando 100% das 367.243 vítimas reais) + ingestão em lotes (`chunksize=5000`), resultando em **~24,8 MB** em CSV/PostgreSQL Aiven (< 2,5% do limite de 1 GB). |
+| **2. Variedade** | Integração de **2 fontes heterogêneas**: dados governamentais agregados por município/mês (SINESP) e microdados de sociedade civil no nível do indivíduo/ocorrência com coordenadas GPS, identidade de gênero e raça/cor (Fogo Cruzado). | Unificação semântica através de **Esquema Estrela (Star Schema)** com dimensões compartilhadas de Tempo (`dim_tempo`), Localidade (`dim_localidade`) e Contexto (`dim_contexto_crime`). |
+| **3. Velocidade** | Atualizações periódicas (mensais no SINESP e diárias/em tempo quase real no Fogo Cruzado) que exigem pipeline reprodutível e consultas de baixa latência no Dashboard. | Uso de índices B-Tree compostos nas chaves estrangeiras do PostgreSQL e cache em memória (`@st.cache_data`) no Streamlit para resposta sub-segundo nos filtros cruzados. |
+| **4. Veracidade** | Presença de valores ausentes (`Não informado` / `Sem identificação` em raça e gênero), datas em formato serial numérico do Excel (`45658.0`) e coordenadas geográficas com erro de escala decimal (ex: `-129255147` em vez de `-12.92`). | Normalização algorítmica de coordenadas em `transform.py`, conversão tipada de datas, remoção de duplicatas e separação explícita entre registros identificados vs. não identificados nos cálculos percentuais. |
+| **5. Valor** | Transformação de dados brutos de segurança pública em inteligência interseccional acionável alinhada à **ODS 5** e à **ODS 18**. | Geração de 6 KPIs estratégicos, Matriz de Letalidade Gênero × Raça/Cor, Taxa de Feminicídio e Drill-Down até o nível de bairro para orientar políticas de prevenção à violência. |
 
 ---
 
-## 5. Como Reproduzir e Auditar o Processo de Tratamento
+## 🛡️ 4. Conformidade com a LGPD e Governança de Dados
 
+Mesmo tratando-se de bases públicas voltadas à pesquisa e transparência, a **Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD)** exige a proteção contra a **reidentificação indireta** de pessoas físicas (Art. 5º, I e II) e preconiza a **minimização de dados** (Art. 6º, III) e a **anonimização/pseudonimização para fins de estudos e pesquisa** (Art. 12 e Art. 13).
+
+### Medidas Técnicas Implementadas no Pipeline (`/etl/transform.py`)
+
+1. **Remoção de Quase-Identificadores Diretos e Funcionais (Minimização — Art. 6º, III):**
+   - Na base `complemento fogo cruzado.xlsx`, as colunas `endereco` (logradouro exato da ocorrência), `ocorrencia_numero`, `corporacao`, `cargo_agente`, `status_agente` e `unidade` (que, combinadas com data, sexo e idade, poderiam reidentificar uma vítima civil em uma rua específica ou um agente público específico) são **descartadas antes da carga no banco de dados**.
+2. **Pseudonimização Irreversível de Identificadores (Art. 12 e Art. 13):**
+   - Os UUIDs originais `vitima_id` e `ocorrencia_id` são transformados via função criptográfica **SHA-256 com *salt*** (`pseudonymize_id_lgpd`), armazenando apenas o hash truncado de 16 caracteres (`vitima_hash_lgpd` e `ocorrencia_hash`) para preservação da unicidade estatística sem vínculo reversível.
+3. **Generalização Espacial (*k-Anonimato Geográfico*):**
+   - As coordenadas `latitude` e `longitude` passam por correção de escala e são **truncadas para 2 casas decimais** (`lat_aprox`, `lon_aprox`), o que equivale a uma grade espacial de aproximadamente **1,1 km × 1,1 km**, impedindo a localização exata da residência ou ponto exato da vítima, mas preservando manchas de calor macrorregionais.
+4. **Tratamento Ético de Dados Sensíveis (Art. 5º, II e Art. 11, II, "c"):**
+   - Dados referentes a origem racial/étnica (`raca`) e identidade de gênero (`genero`) são processados exclusivamente de forma agregada e anonimizada para realização de estudos por órgão/projeto de pesquisa sobre desigualdades alinhadas às **ODS 5 e ODS 18**.
+
+---
+
+## ⭐ 5. Justificativa do Modelo de Banco de Dados (Star Schema) e Otimização (< 1 GB Aiven)
+
+### Por que PostgreSQL na Aiven com Esquema Estrela (Star Schema)?
+Escolhemos o **PostgreSQL 16 (Aiven Managed Service)** modelado em um **Esquema Estrela (*Star Schema*)** pelos seguintes motivos técnicos:
+1. **Performance em Consultas Analíticas (OLAP):** O Dashboard executa agregações cruzadas frequentes (`GROUP BY ano, regiao, uf, genero, raca`). O *Star Schema* reduz a quantidade de `JOINs` necessários (apenas 1 salto entre a tabela fato e qualquer dimensão), garantindo baixa latência no Streamlit.
+2. **Integração Limpa de Duas Fontes com Granularidades Distintas:**
+   - A `fato_violencia_sinesp` opera na granularidade **Município × Mês × Evento Criminal** (Visão Macro Nacional).
+   - A `fato_vitimas_fogo_cruzado` opera na granularidade **Vítima Individual Anonimizada × Ocorrência** (Visão Micro Interseccional).
+   - Ambas compartilham as mesmas dimensões conformadas (`dim_tempo`, `dim_localidade` e `dim_contexto_crime`), permitindo filtros unificados de Ano, Região e UF no Dashboard.
+3. **Economia de Espaço (Normalização de Strings Repetidas):** Strings longas como nomes de eventos (`"Morte no trânsito ou em decorrência dele (exceto homicídio doloso)"`), municípios e perfis interseccionais são armazenadas uma única vez nas tabelas de dimensão e referenciadas por chaves inteiras (`INTEGER`) nas tabelas fato.
+
+### Estratégia de Otimização de Volume para o Limite de 1 GB da Aiven
+- **Diagnóstico da Base Bruta (`fonte original.xlsx`):** Dos **832.293 registros**, exatamente **728.846 registros (87,57%)** correspondem a linhas geradas pelo produto cartesiano de todos os 5.570 municípios × 12 meses × tipos de crime onde **não houve ocorrência nem vítima (`total_vitima = 0` e `total = 0`)**. Apenas **103.447 registros (12,43%)** possuem ocorrências ou vítimas reais (`> 0`).
+- **Regra de Otimização (`clean_and_optimize_sinesp`):** O pipeline retém **100% dos 103.447 registros ativos (preservando integralmente as 367.243 vítimas e todas as ocorrências)** e descarta (ou amostra configuravelmente via `.env`) os registros totalmente zerados, além de realizar a ingestão via **Batch Chunking (`chunksize=5000`)**.
+- **Resultado:** Os dados tratados somam apenas **24,8 MB** (`13,68 MB` SINESP + `11,18 MB` Fogo Cruzado), operando com **> 97% de margem livre** dentro do limite de **1 GB** do plano gratuito da Aiven, sem perder nenhuma vítima das estatísticas oficiais.
+
+### Diagrama Entidade-Relacionamento (Star Schema)
+
+```mermaid
+erDiagram
+    dim_tempo ||--o{ fato_violencia_sinesp : "id_tempo"
+    dim_localidade ||--o{ fato_violencia_sinesp : "id_localidade"
+    dim_contexto_crime ||--o{ fato_violencia_sinesp : "id_contexto"
+
+    dim_tempo ||--o{ fato_vitimas_fogo_cruzado : "id_tempo"
+    dim_localidade ||--o{ fato_vitimas_fogo_cruzado : "id_localidade"
+    dim_perfil_vitima ||--o{ fato_vitimas_fogo_cruzado : "id_perfil"
+    dim_contexto_crime ||--o{ fato_vitimas_fogo_cruzado : "id_contexto"
+
+    dim_tempo {
+        int id_tempo PK "YYYYMMDD"
+        date data_completa
+        smallint ano
+        smallint mes
+        varchar nome_mes
+        smallint trimestre
+        smallint semestre
+    }
+
+    dim_localidade {
+        serial id_localidade PK
+        varchar regiao
+        char uf
+        varchar estado
+        varchar municipio
+        varchar bairro
+    }
+
+    dim_perfil_vitima {
+        serial id_perfil PK
+        varchar genero "ODS 5"
+        varchar macro_genero
+        varchar raca_cor "ODS 18"
+        varchar faixa_etaria
+        varchar tipo_pessoa
+        varchar grupo_interseccional
+    }
+
+    dim_contexto_crime {
+        serial id_contexto PK
+        varchar fonte_dados
+        varchar tipo_evento
+        varchar arma
+        varchar agente_seguranca
+        boolean acao_policial
+        boolean presenca_agente
+        boolean chacina
+        varchar circunstancia
+        varchar local_ocorrencia
+    }
+
+    fato_violencia_sinesp {
+        serial id_fato_sinesp PK
+        int id_tempo FK
+        int id_localidade FK
+        int id_contexto FK
+        int vitimas_feminino
+        int vitimas_masculino
+        int vitimas_nao_inf
+        int total_vitimas
+        numeric total_ocorrencias
+        numeric total_peso
+    }
+
+    fato_vitimas_fogo_cruzado {
+        serial id_fato_fc PK
+        char vitima_hash_lgpd "SHA-256 (16 chars)"
+        char ocorrencia_hash "SHA-256 (16 chars)"
+        int id_tempo FK
+        int id_localidade FK
+        int id_perfil FK
+        int id_contexto FK
+        varchar situacao_vitima "Morto / Ferido"
+        smallint is_fatal "1 ou 0"
+        smallint idade_vitima
+        numeric lat_aprox "Truncada 2 casas (LGPD)"
+        numeric lon_aprox "Truncada 2 casas (LGPD)"
+    }
+```
+
+---
+
+## 📖 6. Dicionário de Dados e Regras de Negócio Interseccionais
+
+### 6.1. Dicionário de Dados — Tabelas do Data Warehouse (`/etl/schema.sql`)
+
+| Tabela | Coluna | Tipo SQL | Descrição | Origem / Transformação |
+| :--- | :--- | :--- | :--- | :--- |
+| `dim_tempo` | `id_tempo` | `INTEGER PK` | Chave substituta temporal no formato `YYYYMMDD` | Derivada de `data_referencia` (SINESP) e `data` (Fogo Cruzado) |
+| `dim_tempo` | `ano`, `mes`, `trimestre` | `SMALLINT` | Partições temporais para filtros e séries históricas | Extraídas da data convertida do serial Excel |
+| `dim_localidade` | `regiao`, `uf`, `estado` | `VARCHAR / CHAR(2)` | Macrorregião IBGE, sigla da UF e nome do Estado | Padronizados via dicionário `UF_METADATA` |
+| `dim_localidade` | `municipio`, `bairro` | `VARCHAR(120)` | Município/Cidade e Bairro em caixa alta padronizada | `municipio`/`cidade` e `bairro` (`NÃO ESPECIFICADO` no SINESP) |
+| `dim_perfil_vitima` | `genero`, `macro_genero` | `VARCHAR` | Identidade de gênero detalhada e agrupada (`Feminino`, `Masculino`, `Trans/Travesti`) | Coluna `genero` do Fogo Cruzado (ODS 5) |
+| `dim_perfil_vitima` | `raca_cor` | `VARCHAR(35)` | Raça/Cor da vítima (`Negra`, `Branca`, `Indígena`, `Amarela`, `Não identificado`) | Coluna `raca` do Fogo Cruzado (ODS 18) |
+| `dim_perfil_vitima` | `grupo_interseccional` | `VARCHAR(80)` | Combinação `Macro Gênero - Raça/Cor` (ex: `Feminino - Negra`, `Trans/Travesti - Negra`) | Regra de negócio interseccional (ODS 5 × ODS 18) |
+| `fato_violencia_sinesp` | `vitimas_feminino`, `vitimas_masculino`, `total_vitimas` | `INTEGER` | Contagem mensal de vítimas por sexo e total no município/evento | Colunas `feminino`, `masculino`, `total_vitima` da `fonte original.xlsx` |
+| `fato_vitimas_fogo_cruzado` | `vitima_hash_lgpd` | `CHAR(16)` | Identificador pseudonimizado da vítima (LGPD Art. 12) | `SHA-256(salt + vitima_id)[:16]` |
+| `fato_vitimas_fogo_cruzado` | `is_fatal`, `situacao_vitima` | `SMALLINT / VARCHAR` | Indicador binário de óbito (`1 = Morto`, `0 = Ferido`) | Mapeado de `situacao` (`Dead` -> `Morto`, `Wounded` -> `Ferido`) |
+| `fato_vitimas_fogo_cruzado` | `lat_aprox`, `lon_aprox` | `NUMERIC(6,2)` | Coordenadas geográficas corrigidas e truncadas em 2 casas decimais | Normalização + *k-anonimato espacial* LGPD |
+
+### 6.2. Regras de Negócio e KPIs Implementados (`/dashboard/business_rules.py`)
+
+1. **KPI 1 — Total de Vítimas Registradas (SINESP) & Tendência Central Municipal (`Média` vs. `Mediana`):**
+   $$\text{Vítimas}_{\text{SINESP}} = \sum \text{total\_vitima} \quad \Big| \quad \text{Concentração Municipal} = \text{Média ou Mediana}\left(\sum_{\text{mun}} \text{total\_vitima}\right)$$
+2. **KPI 2 — Participação de Vítimas Femininas no Panorama Nacional (ODS 5):**
+   $$\text{\% Vitimização Feminina} = \left(\frac{\sum \text{feminino}}{\sum \text{total\_vitima}}\right) \times 100$$
+3. **KPI 3 — Taxa de Tipificação de Feminicídio sobre Mortes Violentas Femininas (ODS 5):**
+   $$\text{Taxa de Feminicídio (\%)} = \left(\frac{\sum \text{feminino}_{\text{Feminicídio}}}{\sum \text{feminino}_{\text{Feminicídio}} + \sum \text{feminino}_{\text{Homicídio Doloso}}}\right) \times 100$$
+4. **KPI 4 — Taxa de Letalidade da Violência Armada (Fogo Cruzado):**
+   $$\text{Taxa de Letalidade (\%)} = \left(\frac{\sum \text{is\_fatal}}{\text{Total de Vítimas Baleadas}}\right) \times 100$$
+5. **KPI 5 — Sobrerrepresentação Racial entre Vítimas Identificadas (ODS 18):**
+   $$\text{\% Vítimas Negras} = \left(\frac{\text{Vítimas com Raça} = \text{'Negra'}}{\text{Total de Vítimas com Raça/Cor Identificada}}\right) \times 100$$
+6. **KPI 6 — Idade Central Dinâmica (`Média` vs. `Mediana`) e Recorte Mulheres Negras / Trans (ODS 5 × ODS 18):**
+   - Alterna dinamicamente entre $\bar{x}_{\text{idade}}$ e $\text{Mediana}(\text{idade})$, exibindo o volume absoluto de mulheres baleadas e a parcela de mulheres negras.
+
+---
+
+## 📁 7. Estrutura Obrigatória do Repositório (Entregável 6)
+
+O repositório foi estruturado para permitir a identificação imediata dos **4 pilares exigidos no Entregável 6**:
+1. **Código utilizado no tratamento dos dados:** diretório [`/etl`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/etl) (`config.py`, `extract.py`, `transform.py`, `load.py`, `pipeline.py`, `schema.sql`).
+2. **Arquivos relacionados à infraestrutura:** diretório [`/terraform`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/terraform) (`versions.tf`, `main.tf`, `variables.tf`, `outputs.tf`, `terraform.tfvars.example`, `sql/schema.sql`, `sql/seed_star_schema.sql`).
+3. **Documentação:** [`README.md`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/README.md), diretório [`/docs`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/docs) (`ENTREGAVEL_1_BASE_TRATADA.md`, `ENTREGAVEL_2_PROCESSO_DE_TRATAMENTO.md`, `ENTREGAVEL_3_BANCO_DE_DADOS.md`, `ENTREGAVEL_4_INFRAESTRUTURA_TERRAFORM.md`, `ENTREGAVEL_6_REPOSITORIO_DO_PROJETO.md`, `PITCH_APRESENTACAO.md`) e documentos `.docx`.
+4. **Demais arquivos necessários para reprodução e compreensão da solução:** diretório [`/data/processed`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/data/processed) (CSVs do Star Schema, banco relacional SQLite3 `.db` e Dump `.sql`), utilitário CLI [`acessar_banco.py`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/acessar_banco.py), [`/dashboard`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/dashboard), [`/tests`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/tests), [`requirements.txt`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/requirements.txt), [`.env.example`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/.env.example) e [`/.github/workflows/ci_etl_deploy.yml`](file:///C:/Users/Vinicius%20Freitas/Desktop/BIGDATA/.github/workflows/ci_etl_deploy.yml).
+
+```text
+BIGDATA/
+├── etl/                                    # [FASE 3] Pipeline de ETL, LGPD, Amostragem e Star Schema
+│   ├── __init__.py
+│   ├── config.py                           # Leitura segura do .env e metadados geográficos IBGE
+│   ├── extract.py                          # Ingestão das bases SINESP e Fogo Cruzado
+│   ├── transform.py                        # Data Wrangling, Anonimização LGPD e Otimização < 1 GB
+│   ├── load.py                             # Carga em batches (chunksize=5000) no PostgreSQL Aiven
+│   ├── pipeline.py                         # Orquestrador CLI do ETL ponta a ponta
+│   └── schema.sql                          # DDL SQL do Esquema Estrela (4 Dimensões, 2 Fatos, 2 Views)
+├── terraform/                              # [FASE 2] Infraestrutura como Código (IaC - Aiven Cloud)
+│   ├── main.tf                             # Provisionamento do PostgreSQL 16 e banco dimensional
+│   ├── variables.tf                        # Declaração tipada de variáveis e segredos sensíveis
+│   ├── outputs.tf                          # Outputs de host, porta, usuário e URI SSL
+│   └── terraform.tfvars.example            # Exemplo de preenchimento de variáveis sem segredos reais
+├── dashboard/                              # [FASE 4 & 5] Aplicação Interativa de BI (Streamlit)
+│   ├── app.py                              # Interface web com 6 KPIs, Filtros, Média/Mediana e Drill-Down
+│   ├── business_rules.py                   # Regras lógicas dos indicadores interseccionais ODS 5 e ODS 18
+│   └── requirements.txt                    # Dependências para deploy direto no Streamlit Cloud
+├── data/
+│   └── processed/                          # Tabelas tratadas e anonimizadas geradas pelo ETL
+├── docs/
+│   └── PITCH_APRESENTACAO.md               # [FASE 6] Roteiro estruturado do Pitch Técnico de 10 minutos
+├── tests/
+│   └── test_business_rules_and_lgpd.py     # [FASE 5] Testes automatizados de reprodutibilidade e LGPD
+├── .github/
+│   └── workflows/
+│       └── ci_etl_deploy.yml               # Integração Contínua utilizando GitHub Secrets
+├── .env.example                            # Template seguro de variáveis de ambiente
+├── .gitignore                              # Bloqueio de commit de .env, .tfstate e credenciais
+├── requirements.txt                        # Dependências Python do projeto
+└── README.md                               # Documentação técnica completa
+```
+
+---
+
+## 🚀 8. Guia de Reprodução Passo a Passo (Deployment Guide)
+
+### Passo 1: Clonar o Repositório e Configurar o Ambiente Python
 ```bash
-# 1. Executar o pipeline completo de tratamento (Extract -> Transform -> Load)
+git clone <URL_DO_SEU_REPOSITORIO_GIT>
+cd BIGDATA
+
+python -m venv .venv
+# Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+# Linux/macOS:
+# source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### Passo 2: Provisionar o Banco PostgreSQL na Aiven via Terraform (Fase 2)
+1. Crie uma conta gratuita na [Aiven Console](https://console.aiven.io/) e gere um **API Token** no perfil do usuário.
+2. Exporte as variáveis de ambiente ou crie `terraform/terraform.tfvars` a partir de `terraform/terraform.tfvars.example`:
+```bash
+cd terraform
+cp terraform.tfvars.example terraform.tfvars
+# Edite terraform.tfvars com seu aiven_api_token e aiven_project_name
+
+terraform init
+terraform plan
+terraform apply -auto-approve
+```
+3. Extraia a URI de conexão gerada pelo Terraform e configure o arquivo `.env` na raiz do projeto:
+```bash
+cd ..
+cp .env.example .env
+# Preencha DATABASE_URL no arquivo .env com o valor de: terraform -chdir=terraform output -raw database_uri
+```
+
+### Passo 3: Executar o Pipeline de ETL e Carga no Banco (Fase 3)
+```bash
+# Executa Extract -> Transform (LGPD + Otimização < 1 GB) -> Load (PostgreSQL Aiven + Cache Local)
 python -m etl.pipeline
 
-# 2. Executar apenas o processamento local das planilhas brutas sem conexão remota ao PostgreSQL
-python -m etl.pipeline --skip-db --force-excel
+# (Opcional) Para testar apenas a geração local das tabelas Star Schema sem banco remoto:
+python -m etl.pipeline --skip-db
+```
 
-# 3. Executar a suíte de testes unitários que valida todas as regras de transformação e LGPD
+### Passo 4: Validar a Reprodutibilidade com Testes Automatizados (Fase 5)
+```bash
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
+
+### Passo 5: Executar o Dashboard Localmente e Publicar no Streamlit Cloud (Fase 4 & 5)
+```bash
+# Execução local:
+streamlit run dashboard/app.py
+```
+**Para Deploy Gratuito no Streamlit Community Cloud:**
+1. Faça push do repositório para o GitHub (certificando-se de que `data/processed/*.csv` estão versionados e que `.env` está listado no `.gitignore`).
+2. Acesse [share.streamlit.io](https://share.streamlit.io/), clique em **New app** e selecione o seu repositório.
+3. Defina **Main file path** como `dashboard/app.py`.
+4. Em **Advanced Settings -> Secrets**, adicione a variável `DATABASE_URL = "postgresql://..."` apontando para o seu serviço Aiven PostgreSQL e clique em **Deploy!**.

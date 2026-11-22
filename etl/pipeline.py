@@ -15,7 +15,11 @@ from etl.transform import (
     clean_and_anonymize_fogo_cruzado,
     build_star_schema_tables,
 )
-from etl.load import export_star_schema_locally, load_to_aiven_postgres
+from etl.load import (
+    export_star_schema_locally,
+    build_sqlite_warehouse_and_dump,
+    load_to_aiven_postgres,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -45,8 +49,9 @@ def run_pipeline(skip_db: bool = False, force_excel: bool = False) -> None:
     df_sinesp_clean.to_csv(PROCESSED_DIR / "sinesp_tratado.csv", index=False, encoding="utf-8")
     df_fc_clean.to_csv(PROCESSED_DIR / "fogo_cruzado_tratado.csv", index=False, encoding="utf-8")
 
-    # 3. LOAD (Local Cache + Aiven PostgreSQL)
+    # 3. LOAD (Local Cache CSV + Banco Relacional SQLite & Dump SQL + Aiven PostgreSQL)
     export_star_schema_locally(star_tables)
+    build_sqlite_warehouse_and_dump(star_tables)
     if not skip_db:
         load_to_aiven_postgres(star_tables)
 

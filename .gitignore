@@ -5,7 +5,6 @@
 # Variáveis de ambiente e segredos (LGPD & Segurança Fase 2)
 .env
 .env.*
-!.env.example
 .streamlit/secrets.toml
 
 # Terraform (IaC)
@@ -35,14 +34,17 @@ env/
 .pytest_cache/
 *.egg-info/
 
-# Bancos locais temporários e logs
+# Bancos locais temporários e logs (mantém o Data Warehouse oficial dw_violencia_interseccional.db)
 *.db
+!data/processed/dw_violencia_interseccional.db
 *.sqlite3
 *.log
 
-# Arquivos de sistema e IDE
+# Arquivos de sistema, IDE, documentos Word locais e planilhas brutas contendo dados sensíveis (LGPD)
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 ~$*.xlsx
+*.xlsx
+*.docx

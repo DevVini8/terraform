@@ -1,0 +1,400 @@
+uf,municipio,evento,data_referencia,ano,mes,agente,arma,faixa_etaria,abrangencia,feminino,masculino,nao_informado,total_vitima,total,total_peso,nome_mes,trimestre,semestre,id_tempo,estado,regiao
+AC,RIO BRANCO,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Acre,Norte
+AC,RIO BRANCO,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Acre,Norte
+AC,RIO BRANCO,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Acre,Norte
+AC,RIO BRANCO,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Abril,2,1,20250401,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Maio,2,1,20250501,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Novembro,4,2,20251101,Acre,Norte
+AC,RIO BRANCO,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Acre,Norte
+AL,MACEIÓ,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Maio,2,1,20250501,Alagoas,Nordeste
+AL,MACEIÓ,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Alagoas,Nordeste
+AL,MACEIÓ,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Alagoas,Nordeste
+AL,MACEIÓ,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Alagoas,Nordeste
+AL,MACEIÓ,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Dezembro,4,2,20251201,Alagoas,Nordeste
+AL,MACEIÓ,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Janeiro,1,1,20250101,Alagoas,Nordeste
+AL,MACEIÓ,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Fevereiro,1,1,20250201,Alagoas,Nordeste
+AL,MACEIÓ,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Março,1,1,20250301,Alagoas,Nordeste
+AL,MACEIÓ,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Alagoas,Nordeste
+AL,MACEIÓ,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Novembro,4,2,20251101,Alagoas,Nordeste
+AM,MANAUS,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Amazonas,Norte
+AM,MANAUS,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Amazonas,Norte
+AM,MANAUS,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Amazonas,Norte
+AM,MANAUS,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Amazonas,Norte
+AM,MANAUS,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Amazonas,Norte
+AM,MANAUS,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Dezembro,4,2,20251201,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Janeiro,1,1,20250101,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Fevereiro,1,1,20250201,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Março,1,1,20250301,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Abril,2,1,20250401,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Junho,2,1,20250601,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Agosto,3,2,20250801,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Setembro,3,2,20250901,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Outubro,4,2,20251001,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Novembro,4,2,20251101,Amazonas,Norte
+AM,MANAUS,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Dezembro,4,2,20251201,Amazonas,Norte
+AP,MACAPÁ,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Amapá,Norte
+AP,MACAPÁ,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Janeiro,1,1,20250101,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Março,1,1,20250301,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Junho,2,1,20250601,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Agosto,3,2,20250801,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Novembro,4,2,20251101,Amapá,Norte
+AP,MACAPÁ,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Amapá,Norte
+BA,SALVADOR,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Bahia,Nordeste
+BA,SALVADOR,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Fevereiro,1,1,20250201,Bahia,Nordeste
+BA,SALVADOR,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Bahia,Nordeste
+BA,SALVADOR,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Bahia,Nordeste
+BA,SALVADOR,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Bahia,Nordeste
+BA,SALVADOR,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Setembro,3,2,20250901,Bahia,Nordeste
+BA,SALVADOR,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Janeiro,1,1,20250101,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Fevereiro,1,1,20250201,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Junho,2,1,20250601,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Julho,3,2,20250701,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Setembro,3,2,20250901,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Novembro,4,2,20251101,Bahia,Nordeste
+BA,SALVADOR,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Dezembro,4,2,20251201,Bahia,Nordeste
+CE,FORTALEZA,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Ceará,Nordeste
+CE,FORTALEZA,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Ceará,Nordeste
+CE,FORTALEZA,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Julho,3,2,20250701,Ceará,Nordeste
+CE,FORTALEZA,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Agosto,3,2,20250801,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Março,1,1,20250301,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Novembro,4,2,20251101,Ceará,Nordeste
+CE,FORTALEZA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Ceará,Nordeste
+DF,BRASÍLIA,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Janeiro,1,1,20250101,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Fevereiro,1,1,20250201,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Maio,2,1,20250501,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Junho,2,1,20250601,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Julho,3,2,20250701,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Setembro,3,2,20250901,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Dezembro,4,2,20251201,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,11,0,0,11,0,0,Janeiro,1,1,20250101,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,7,0,0,7,0,0,Fevereiro,1,1,20250201,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,14,0,0,14,0,0,Março,1,1,20250301,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Abril,2,1,20250401,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,18,0,0,18,0,0,Maio,2,1,20250501,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Junho,2,1,20250601,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Julho,3,2,20250701,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Agosto,3,2,20250801,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Setembro,3,2,20250901,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Outubro,4,2,20251001,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,18,0,0,18,0,0,Novembro,4,2,20251101,Distrito Federal,Centro-Oeste
+DF,BRASÍLIA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,13,0,0,13,0,0,Dezembro,4,2,20251201,Distrito Federal,Centro-Oeste
+ES,VITÓRIA,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Espírito Santo,Sudeste
+GO,GOIÂNIA,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Abril,2,1,20250401,Goiás,Centro-Oeste
+GO,GOIÂNIA,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Goiás,Centro-Oeste
+GO,GOIÂNIA,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Goiás,Centro-Oeste
+GO,GOIÂNIA,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Goiás,Centro-Oeste
+GO,GOIÂNIA,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Fevereiro,1,1,20250201,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Maio,2,1,20250501,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Outubro,4,2,20251001,Goiás,Centro-Oeste
+GO,GOIÂNIA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Dezembro,4,2,20251201,Goiás,Centro-Oeste
+MA,SÃO LUÍS,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Maranhão,Nordeste
+MA,SÃO LUÍS,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Maranhão,Nordeste
+MA,SÃO LUÍS,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Maranhão,Nordeste
+MA,SÃO LUÍS,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Maranhão,Nordeste
+MA,SÃO LUÍS,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Maranhão,Nordeste
+MA,SÃO LUÍS,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Junho,2,1,20250601,Maranhão,Nordeste
+MA,SÃO LUÍS,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Maranhão,Nordeste
+MA,SÃO LUÍS,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Setembro,3,2,20250901,Maranhão,Nordeste
+MA,SÃO LUÍS,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Maranhão,Nordeste
+MG,BELO HORIZONTE,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Janeiro,1,1,20250101,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Março,1,1,20250301,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Outubro,4,2,20251001,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Dezembro,4,2,20251201,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Fevereiro,1,1,20250201,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Maio,2,1,20250501,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Julho,3,2,20250701,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Agosto,3,2,20250801,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Setembro,3,2,20250901,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Novembro,4,2,20251101,Minas Gerais,Sudeste
+MG,BELO HORIZONTE,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Dezembro,4,2,20251201,Minas Gerais,Sudeste
+MS,CAMPO GRANDE,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Maio,2,1,20250501,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Janeiro,1,1,20250101,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Maio,2,1,20250501,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Mato Grosso do Sul,Centro-Oeste
+MS,CAMPO GRANDE,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Novembro,4,2,20251101,Mato Grosso do Sul,Centro-Oeste
+MT,CUIABÁ,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Janeiro,1,1,20250101,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Fevereiro,1,1,20250201,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Março,1,1,20250301,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Abril,2,1,20250401,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Junho,2,1,20250601,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Julho,3,2,20250701,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Setembro,3,2,20250901,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Outubro,4,2,20251001,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Novembro,4,2,20251101,Mato Grosso,Centro-Oeste
+MT,CUIABÁ,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Dezembro,4,2,20251201,Mato Grosso,Centro-Oeste
+PA,BELÉM,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Pará,Norte
+PA,BELÉM,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Pará,Norte
+PA,BELÉM,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Pará,Norte
+PA,BELÉM,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Janeiro,1,1,20250101,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Junho,2,1,20250601,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Pará,Norte
+PA,BELÉM,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Dezembro,4,2,20251201,Pará,Norte
+PB,JOÃO PESSOA,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Paraíba,Nordeste
+PB,JOÃO PESSOA,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Paraíba,Nordeste
+PB,JOÃO PESSOA,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Paraíba,Nordeste
+PB,JOÃO PESSOA,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Paraíba,Nordeste
+PB,JOÃO PESSOA,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Fevereiro,1,1,20250201,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Paraíba,Nordeste
+PB,JOÃO PESSOA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Paraíba,Nordeste
+PE,RECIFE,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Fevereiro,1,1,20250201,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Novembro,4,2,20251101,Pernambuco,Nordeste
+PE,RECIFE,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Fevereiro,1,1,20250201,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Março,1,1,20250301,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Maio,2,1,20250501,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Agosto,3,2,20250801,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Setembro,3,2,20250901,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Pernambuco,Nordeste
+PE,RECIFE,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Dezembro,4,2,20251201,Pernambuco,Nordeste
+PI,TERESINA,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Piauí,Nordeste
+PI,TERESINA,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Fevereiro,1,1,20250201,Piauí,Nordeste
+PI,TERESINA,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Piauí,Nordeste
+PI,TERESINA,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Piauí,Nordeste
+PI,TERESINA,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Piauí,Nordeste
+PI,TERESINA,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Fevereiro,1,1,20250201,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Maio,2,1,20250501,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Junho,2,1,20250601,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Outubro,4,2,20251001,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Piauí,Nordeste
+PI,TERESINA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Piauí,Nordeste
+PR,CURITIBA,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Paraná,Sul
+PR,CURITIBA,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Junho,2,1,20250601,Paraná,Sul
+PR,CURITIBA,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Julho,3,2,20250701,Paraná,Sul
+PR,CURITIBA,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Paraná,Sul
+PR,CURITIBA,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Paraná,Sul
+PR,CURITIBA,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Dezembro,4,2,20251201,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Fevereiro,1,1,20250201,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Março,1,1,20250301,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Julho,3,2,20250701,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Setembro,3,2,20250901,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Outubro,4,2,20251001,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Paraná,Sul
+PR,CURITIBA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Dezembro,4,2,20251201,Paraná,Sul
+RJ,RIO DE JANEIRO,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Fevereiro,1,1,20250201,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Março,1,1,20250301,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Maio,2,1,20250501,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Junho,2,1,20250601,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Agosto,3,2,20250801,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Setembro,3,2,20250901,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Outubro,4,2,20251001,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Novembro,4,2,20251101,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Dezembro,4,2,20251201,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,7,0,0,7,0,0,Janeiro,1,1,20250101,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Fevereiro,1,1,20250201,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Março,1,1,20250301,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Abril,2,1,20250401,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Maio,2,1,20250501,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Junho,2,1,20250601,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Julho,3,2,20250701,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Agosto,3,2,20250801,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Setembro,3,2,20250901,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Outubro,4,2,20251001,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,7,0,0,7,0,0,Novembro,4,2,20251101,Rio de Janeiro,Sudeste
+RJ,RIO DE JANEIRO,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,9,0,0,9,0,0,Dezembro,4,2,20251201,Rio de Janeiro,Sudeste
+RN,NATAL,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Rio Grande do Norte,Nordeste
+RN,NATAL,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Maio,2,1,20250501,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Novembro,4,2,20251101,Rio Grande do Norte,Nordeste
+RN,NATAL,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Dezembro,4,2,20251201,Rio Grande do Norte,Nordeste
+RO,PORTO VELHO,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Rondônia,Norte
+RO,PORTO VELHO,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Rondônia,Norte
+RO,PORTO VELHO,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Rondônia,Norte
+RO,PORTO VELHO,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Junho,2,1,20250601,Rondônia,Norte
+RO,PORTO VELHO,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Abril,2,1,20250401,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Setembro,3,2,20250901,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Rondônia,Norte
+RO,PORTO VELHO,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Rondônia,Norte
+RR,BOA VISTA,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Maio,2,1,20250501,Roraima,Norte
+RR,BOA VISTA,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Junho,2,1,20250601,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Julho,3,2,20250701,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Setembro,3,2,20250901,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Roraima,Norte
+RR,BOA VISTA,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Roraima,Norte
+RS,PORTO ALEGRE,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Janeiro,1,1,20250101,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Fevereiro,1,1,20250201,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Março,1,1,20250301,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Abril,2,1,20250401,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Junho,2,1,20250601,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Julho,3,2,20250701,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Agosto,3,2,20250801,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Setembro,3,2,20250901,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Outubro,4,2,20251001,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Novembro,4,2,20251101,Rio Grande do Sul,Sul
+RS,PORTO ALEGRE,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Dezembro,4,2,20251201,Rio Grande do Sul,Sul
+SC,FLORIANÓPOLIS,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Setembro,3,2,20250901,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Janeiro,1,1,20250101,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Fevereiro,1,1,20250201,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Março,1,1,20250301,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Abril,2,1,20250401,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Santa Catarina,Sul
+SC,FLORIANÓPOLIS,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Novembro,4,2,20251101,Santa Catarina,Sul
+SE,ARACAJU,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Sergipe,Nordeste
+SE,ARACAJU,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Dezembro,4,2,20251201,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Fevereiro,1,1,20250201,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Março,1,1,20250301,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Agosto,3,2,20250801,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Setembro,3,2,20250901,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Outubro,4,2,20251001,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Novembro,4,2,20251101,Sergipe,Nordeste
+SE,ARACAJU,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Dezembro,4,2,20251201,Sergipe,Nordeste
+SP,SÃO PAULO,Feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,7,0,0,7,0,0,Janeiro,1,1,20250101,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Fevereiro,1,1,20250201,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Março,1,1,20250301,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Abril,2,1,20250401,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,6,0,0,6,0,0,Maio,2,1,20250501,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Junho,2,1,20250601,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,8,0,0,8,0,0,Julho,3,2,20250701,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,3,0,0,3,0,0,Agosto,3,2,20250801,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,7,0,0,7,0,0,Setembro,3,2,20250901,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Outubro,4,2,20251001,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,5,0,0,5,0,0,Novembro,4,2,20251101,São Paulo,Sudeste
+SP,SÃO PAULO,Feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,4,0,0,4,0,0,Dezembro,4,2,20251201,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-01-01,2025,1,Não informado,Não informada,Não informada,Estadual,15,0,0,15,0,0,Janeiro,1,1,20250101,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-02-01,2025,2,Não informado,Não informada,Não informada,Estadual,13,0,0,13,0,0,Fevereiro,1,1,20250201,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,20,0,0,20,0,0,Março,1,1,20250301,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-04-01,2025,4,Não informado,Não informada,Não informada,Estadual,13,0,0,13,0,0,Abril,2,1,20250401,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,16,0,0,16,0,0,Maio,2,1,20250501,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,10,0,0,10,0,0,Junho,2,1,20250601,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,12,0,0,12,0,0,Julho,3,2,20250701,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,15,0,0,15,0,0,Agosto,3,2,20250801,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-09-01,2025,9,Não informado,Não informada,Não informada,Estadual,19,0,0,19,0,0,Setembro,3,2,20250901,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,10,0,0,10,0,0,Outubro,4,2,20251001,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,16,0,0,16,0,0,Novembro,4,2,20251101,São Paulo,Sudeste
+SP,SÃO PAULO,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,15,0,0,15,0,0,Dezembro,4,2,20251201,São Paulo,Sudeste
+TO,PALMAS,Tentativa de feminicídio,2025-03-01,2025,3,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Março,1,1,20250301,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-05-01,2025,5,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Maio,2,1,20250501,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-06-01,2025,6,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Junho,2,1,20250601,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-07-01,2025,7,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Julho,3,2,20250701,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-08-01,2025,8,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Agosto,3,2,20250801,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-10-01,2025,10,Não informado,Não informada,Não informada,Estadual,2,0,0,2,0,0,Outubro,4,2,20251001,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-11-01,2025,11,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Novembro,4,2,20251101,Tocantins,Norte
+TO,PALMAS,Tentativa de feminicídio,2025-12-01,2025,12,Não informado,Não informada,Não informada,Estadual,1,0,0,1,0,0,Dezembro,4,2,20251201,Tocantins,Norte

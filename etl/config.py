@@ -15,6 +15,8 @@ RAW_SINESP_PATH = BASE_DIR / "fonte original.xlsx"
 RAW_FOGO_CRUZADO_PATH = BASE_DIR / "complemento fogo cruzado.xlsx"
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 SCHEMA_SQL_PATH = BASE_DIR / "etl" / "schema.sql"
+SQLITE_DB_PATH = PROCESSED_DIR / "dw_violencia_interseccional.db"
+SQL_DUMP_PATH = PROCESSED_DIR / "dump_dw_violencia_interseccional.sql"
 
 # Parâmetros de otimização de volume para respeitar o limite de 1 GB da Aiven (Fase 3)
 CHUNK_SIZE = int(os.getenv("ETL_CHUNK_SIZE", "5000"))

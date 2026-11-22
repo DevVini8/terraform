@@ -1,0 +1,40 @@
+fonte_dados,tipo_evento,arma,agente_seguranca,acao_policial,presenca_agente,chacina,circunstancia,local_ocorrencia,id_contexto
+SINESP_MJSP,Feminicídio,Não informada,Não informado,False,False,False,Registro Oficial SINESP (Capitais 2025),Estadual,1
+SINESP_MJSP,Tentativa de feminicídio,Não informada,Não informado,False,False,False,Registro Oficial SINESP (Capitais 2025),Estadual,2
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Sem identificação,3
+FOGO_CRUZADO,Tentativa/Roubo,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Outros,4
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Residência,5
+FOGO_CRUZADO,Tentativa/Roubo,Arma de fogo,Agente de Segurança Presente,True,True,False,Bala perdida,Automóvel,6
+FOGO_CRUZADO,Tiros a esmo,Arma de fogo,Sem Agente Identificado,False,False,True,Chacina,Sem identificação,7
+FOGO_CRUZADO,Ação policial,Arma de fogo,Agente de Segurança Presente,True,True,False,Bala perdida,Sem identificação,8
+FOGO_CRUZADO,Disparo Acidental,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Evento,9
+FOGO_CRUZADO,Não identificado,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Sem identificação,10
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Evento,11
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,True,Chacina,Sem identificação,12
+FOGO_CRUZADO,Briga,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Sem identificação,13
+FOGO_CRUZADO,Briga,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Bar,14
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Agente de Segurança Presente,False,True,False,Transfeminicídio; Sem identificação,Sem identificação,15
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Feminicídio/tentativa,Residência,16
+FOGO_CRUZADO,Tortura,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Residência,17
+FOGO_CRUZADO,Ação policial,Arma de fogo,Agente de Segurança Presente,True,True,False,Bala perdida,Residência,18
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Feminicídio/tentativa,Outros,19
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Agente de Segurança Presente,False,True,False,Feminicídio/tentativa,Automóvel,20
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Feminicídio/tentativa,Sem identificação,21
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Feminicídio/tentativa,Bar,22
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Encontro de cadáver,Sem identificação,23
+FOGO_CRUZADO,Briga,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Outros,24
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,True,Chacina,Evento,25
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Outros,26
+FOGO_CRUZADO,Tentativa/Roubo,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Automóvel,27
+FOGO_CRUZADO,Operação policial,Arma de fogo,Agente de Segurança Presente,True,True,True,Chacina; Bala perdida,Residência,28
+FOGO_CRUZADO,Tentativa/Roubo,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Sem identificação,29
+FOGO_CRUZADO,Tentativa/Roubo,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Bar,30
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Evento,31
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Sem identificação,32
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Automóvel,33
+FOGO_CRUZADO,Ação policial,Arma de fogo,Agente de Segurança Presente,True,True,False,Sem identificação,Automóvel,34
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Sem identificação,35
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Automóvel,36
+FOGO_CRUZADO,Disputa,Arma de fogo,Sem Agente Identificado,False,False,False,Bala perdida,Outros,37
+FOGO_CRUZADO,Ataque a civis,Arma de fogo,Sem Agente Identificado,False,False,False,Sem identificação,Automóvel,38
+FOGO_CRUZADO,Homicidio/Tentativa,Arma de fogo,Sem Agente Identificado,False,False,False,Feminicídio/tentativa,Unidade de ensino,39
