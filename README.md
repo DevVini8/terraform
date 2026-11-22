@@ -303,62 +303,62 @@ BIGDATA/
 
 ---
 
-## 🚀 8. Guia de Reprodução Passo a Passo (Deployment Guide)
+## 🚀 8. Guia de Reprodução Passo a Passo (Como Rodar Todo o Projeto)
 
-### Passo 1: Clonar o Repositório e Configurar o Ambiente Python
+Qualquer integrante da equipe ou avaliador pode clonar este repositório e rodar **todo o projeto (Pipeline ETL, Banco de Dados Relacional, Testes Automatizados e Dashboard)** imediatamente:
+
+### Passo 1: Clonar o Repositório e Instalar as Dependências
 ```bash
-git clone <URL_DO_SEU_REPOSITORIO_GIT>
-cd BIGDATA
-
-python -m venv .venv
-# Windows (PowerShell):
-.\.venv\Scripts\Activate.ps1
-# Linux/macOS:
-# source .venv/bin/activate
+git clone https://github.com/DevVini8/terraform.git
+cd terraform
 
 pip install -r requirements.txt
 ```
 
-### Passo 2: Provisionar o Banco PostgreSQL na Aiven via Terraform (Fase 2)
-1. Crie uma conta gratuita na [Aiven Console](https://console.aiven.io/) e gere um **API Token** no perfil do usuário.
-2. Exporte as variáveis de ambiente ou crie `terraform/terraform.tfvars` a partir de `terraform/terraform.tfvars.example`:
+### Passo 2: Executar o Pipeline de Tratamento de Dados (ETL)
 ```bash
-cd terraform
-cp terraform.tfvars.example terraform.tfvars
-# Edite terraform.tfvars com seu aiven_api_token e aiven_project_name
-
-terraform init
-terraform plan
-terraform apply -auto-approve
-```
-3. Extraia a URI de conexão gerada pelo Terraform e configure o arquivo `.env` na raiz do projeto:
-```bash
-cd ..
-cp .env.example .env
-# Preencha DATABASE_URL no arquivo .env com o valor de: terraform -chdir=terraform output -raw database_uri
-```
-
-### Passo 3: Executar o Pipeline de ETL e Carga no Banco (Fase 3)
-```bash
-# Executa Extract -> Transform (LGPD + Otimização < 1 GB) -> Load (PostgreSQL Aiven + Cache Local)
-python -m etl.pipeline
-
-# (Opcional) Para testar apenas a geração local das tabelas Star Schema sem banco remoto:
+# Processa os dados, constrói as 4 Dimensões e 2 Tabelas Fato (Star Schema)
+# e gera o banco relacional local (dw_violencia_interseccional.db) e o Dump SQL (.sql):
 python -m etl.pipeline --skip-db
 ```
 
-### Passo 4: Validar a Reprodutibilidade com Testes Automatizados (Fase 5)
+### Passo 3: Acessar e Consultar o Banco de Dados Relacional (Entregável 3)
+```bash
+# 1. Ver o resumo de todas as tabelas, quantidade de registros e consultas analíticas:
+python acessar_banco.py
+
+# 2. Abrir o Console SQL Interativo no terminal para digitar qualquer SELECT:
+python acessar_banco.py --interativo
+
+# 3. Executar uma query SQL específica direto pelo terminal:
+python acessar_banco.py --sql "SELECT * FROM dim_perfil_vitima;"
+```
+
+### Passo 4: Abrir o Dashboard Interativo para Apresentação em Sala
+```bash
+python -m streamlit run dashboard/app.py
+```
+
+### Passo 5: Executar os Testes Automatizados (Critérios da Equipe & LGPD)
 ```bash
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-### Passo 5: Executar o Dashboard Localmente e Publicar no Streamlit Cloud (Fase 4 & 5)
+### Passo 6: Provisionar a Infraestrutura PostgreSQL na Aiven Cloud via Terraform (Entregável 4)
 ```bash
-# Execução local:
-streamlit run dashboard/app.py
+cd terraform
+
+# Defina suas variáveis da Aiven Cloud no terminal:
+# Windows (PowerShell):
+$env:TF_VAR_aiven_api_token="SEU_TOKEN_AIVEN"
+$env:TF_VAR_aiven_project_name="SEU_PROJETO_AIVEN"
+
+# Linux / macOS:
+# export TF_VAR_aiven_api_token="SEU_TOKEN_AIVEN"
+# export TF_VAR_aiven_project_name="SEU_PROJETO_AIVEN"
+
+terraform init
+terraform validate
+terraform plan
+terraform apply -auto-approve
 ```
-**Para Deploy Gratuito no Streamlit Community Cloud:**
-1. Faça push do repositório para o GitHub (certificando-se de que `data/processed/*.csv` estão versionados e que `.env` está listado no `.gitignore`).
-2. Acesse [share.streamlit.io](https://share.streamlit.io/), clique em **New app** e selecione o seu repositório.
-3. Defina **Main file path** como `dashboard/app.py`.
-4. Em **Advanced Settings -> Secrets**, adicione a variável `DATABASE_URL = "postgresql://..."` apontando para o seu serviço Aiven PostgreSQL e clique em **Deploy!**.
