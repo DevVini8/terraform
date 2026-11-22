@@ -3,7 +3,6 @@ Dashboard Interativo Simplificado — Apresentação em Sala
 Observatório Interseccional da Violência contra a Mulher nas Capitais do Brasil (2025)
 Alinhado à ODS 5 (Igualdade de Gênero) e à ODS 18 (Igualdade Étnico-Racial).
 """
-import sqlite3
 import sys
 from pathlib import Path
 import pandas as pd
@@ -17,16 +16,13 @@ if str(ROOT_DIR) not in sys.path:
 from etl.config import (
     RAW_SINESP_PATH,
     RAW_FOGO_CRUZADO_PATH,
-    SQLITE_DB_PATH,
     MESES_PT,
 )
 from etl.extract import extract_sinesp_dataset, extract_fogo_cruzado_dataset
 from etl.transform import (
     clean_and_optimize_sinesp,
     clean_and_anonymize_fogo_cruzado,
-    build_star_schema_tables,
 )
-from etl.load import build_sqlite_warehouse_and_dump
 from dashboard.business_rules import (
     compute_kpi_metrics,
     build_intersectional_matrix,
@@ -171,12 +167,11 @@ c4.metric(
 st.divider()
 
 # ==============================================================================
-# 3 ABAS SIMPLES E DIRETAS PARA APRESENTAÇÃO
+# 2 ABAS SIMPLES E DIRETAS PARA APRESENTAÇÃO
 # ==============================================================================
-tab1, tab2, tab3 = st.tabs([
+tab1, tab2 = st.tabs([
     "🚺 1. Capitais do Brasil (SINESP 2025)",
     "🧬 2. Gênero, Raça e Idade (Fogo Cruzado 2025)",
-    "🗄️ 3. Banco de Dados (Entregável 3)",
 ])
 
 # ------------------------------------------------------------------------------
@@ -299,31 +294,3 @@ with tab2:
     else:
         st.info("Sem dados para os filtros selecionados.")
 
-# ------------------------------------------------------------------------------
-# ABA 3: BANCO DE DADOS (ENTREGÁVEL 3)
-# ------------------------------------------------------------------------------
-with tab3:
-    st.subheader("🗄️ Estrutura e Consulta ao Banco de Dados (Star Schema)")
-
-    if not SQLITE_DB_PATH.exists():
-        build_sqlite_warehouse_and_dump(build_star_schema_tables(df_sinesp_full, df_fc_full))
-
-    with sqlite3.connect(SQLITE_DB_PATH) as conn:
-        tabelas = [
-            "dim_tempo",
-            "dim_localidade",
-            "dim_perfil_vitima",
-            "dim_contexto_crime",
-            "fato_violencia_sinesp",
-            "fato_vitimas_fogo_cruzado",
-        ]
-        resumo_db = []
-        for t in tabelas:
-            qtd = conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
-            resumo_db.append({"Tabela do Banco (Star Schema)": t, "Registros Armazenados": qtd})
-
-        st.dataframe(pd.DataFrame(resumo_db), use_container_width=True)
-
-        tabela_escolhida = st.selectbox("Visualizar dados da tabela:", tabelas)
-        df_tabela = pd.read_sql_query(f"SELECT * FROM {tabela_escolhida} LIMIT 100", conn)
-        st.dataframe(df_tabela, use_container_width=True)
