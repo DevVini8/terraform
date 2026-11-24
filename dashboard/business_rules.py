@@ -12,6 +12,36 @@ import numpy as np
 import pandas as pd
 
 
+def build_unified_dataset(df_sinesp: pd.DataFrame, df_fc: pd.DataFrame) -> pd.DataFrame:
+    """Consolida registros mensais com pesos, sem vincular ou deduplicar pessoas entre fontes."""
+    common = ["ano", "mes", "regiao", "uf"]
+    official = df_sinesp[common + ["municipio", "evento", "feminino"]].rename(
+        columns={"evento": "tipo_violencia", "feminino": "quantidade"}
+    ).copy()
+    official["genero"] = "Não informado"
+    official["raca"] = "Não informado"
+    official["idade"] = pd.Series(pd.NA, index=official.index, dtype="Float64")
+    official["origem"] = "SINESP"
+    official["situacao"] = np.where(official["tipo_violencia"] == "Feminicídio", "Morta", "Não informado")
+
+    individual = df_fc[common + ["cidade", "genero", "raca", "idade"]].rename(
+        columns={"cidade": "municipio"}
+    ).copy()
+    individual["tipo_violencia"] = "Violência armada"
+    individual["quantidade"] = 1
+    individual["idade"] = pd.to_numeric(individual["idade"], errors="coerce").astype("Float64")
+    individual["origem"] = "Fogo Cruzado"
+    individual["situacao"] = np.where(df_fc["is_fatal"] == 1, "Morta", "Ferida")
+
+    base = pd.concat([official, individual], ignore_index=True)
+    base["raca"] = base["raca"].replace(
+        {"Não identificado": "Não informado", "Sem identificação": "Não informado", "": "Não informado"}
+    ).fillna("Não informado")
+    # A procedência permite auditoria; não cria divisões na interface.
+    dimensions = [c for c in base.columns if c != "quantidade"]
+    return base.groupby(dimensions, dropna=False, as_index=False)["quantidade"].sum()
+
+
 def compute_kpi_metrics(
     df_sinesp: pd.DataFrame,
     df_fc: pd.DataFrame,
